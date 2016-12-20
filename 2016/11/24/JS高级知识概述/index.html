@@ -11,10 +11,7 @@
   <meta name="description" content="JavaScript高级知识总结递归递归就是函数自己直接或者间接的调用自己
 递归的两个要素
 自己调用自己
-递归结束条件
-
-化归思想由难化易，由繁化简，的思想就是化归思想
-前n项和1fn(n) = fn(n-1) + n">
+递归结束条件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS高级知识概述">
 <meta property="og:url" content="https://github.com/alianzhang/2016/11/24/JS高级知识概述/index.html">
@@ -22,20 +19,14 @@
 <meta property="og:description" content="JavaScript高级知识总结递归递归就是函数自己直接或者间接的调用自己
 递归的两个要素
 自己调用自己
-递归结束条件
-
-化归思想由难化易，由繁化简，的思想就是化归思想
-前n项和1fn(n) = fn(n-1) + n">
-<meta property="og:updated_time" content="2016-12-20T15:49:33.434Z">
+递归结束条件">
+<meta property="og:updated_time" content="2016-12-20T15:52:57.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高级知识概述">
 <meta name="twitter:description" content="JavaScript高级知识总结递归递归就是函数自己直接或者间接的调用自己
 递归的两个要素
 自己调用自己
-递归结束条件
-
-化归思想由难化易，由繁化简，的思想就是化归思想
-前n项和1fn(n) = fn(n-1) + n">
+递归结束条件">
   
     <link rel="alternative" href="/atom.xml" title="alianzhang" type="application/atom+xml">
   
@@ -184,11 +175,11 @@
         <h1 id="JavaScript高级知识总结"><a href="#JavaScript高级知识总结" class="headerlink" title="JavaScript高级知识总结"></a>JavaScript高级知识总结</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归就是函数自己直接或者间接的调用自己</p>
 <h3 id="递归的两个要素"><a href="#递归的两个要素" class="headerlink" title="递归的两个要素"></a>递归的两个要素</h3><ul>
 <li>自己调用自己</li>
-<li>递归结束条件</li>
+<li>递归结束条件<a id="more"></a>
+</li>
 </ul>
 <h3 id="化归思想"><a href="#化归思想" class="headerlink" title="化归思想"></a>化归思想</h3><p>由难化易，由繁化简，的思想就是化归思想</p>
 <h3 id="前n项和"><a href="#前n项和" class="headerlink" title="前n项和"></a>前n项和</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fn(n) = fn(n<span class="number">-1</span>) + n</div></pre></td></tr></table></figure>
-<a id="more"></a>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> sum(n - <span class="number">1</span>) + n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="阶乘"><a href="#阶乘" class="headerlink" title="阶乘"></a>阶乘</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fn(n) = fn(n<span class="number">-1</span>) * n</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">n</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(n==<span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> sum(n - <span class="number">1</span>) * n;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
