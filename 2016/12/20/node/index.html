@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="https://github.com/alianzhang">
+  <title>node初学者总结 | alianzhang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.node
+官网
+
+1.1. node是什么?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node初学者总结">
+<meta property="og:url" content="https://github.com/alianzhang/2016/12/20/node/index.html">
+<meta property="og:site_name" content="alianzhang">
+<meta property="og:description" content="1.node
+官网
+
+1.1. node是什么?">
+<meta property="og:updated_time" content="2016-12-21T15:42:15.745Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node初学者总结">
+<meta name="twitter:description" content="1.node
+官网
+
+1.1. node是什么?">
+  
+    <link rel="alternative" href="/atom.xml" title="alianzhang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="https://avatars1.githubusercontent.com/u/22916879?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Alian</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Writing code is keep my heart beating only reason.</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+				<li><a href="/tags/随笔">随笔</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">友链</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/alianzhang" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/yadealian" title="weibo">weibo</a>
+		        
+					<a class="rss" target="_blank" href="#" title="rss">rss</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/alianzhang" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">Alian</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="https://avatars1.githubusercontent.com/u/22916879?v=3&amp;s=460" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Alian</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Writing code is keep my heart beating only reason.</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/alianzhang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/yadealian" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/alianzhang" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node初学者总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-node"><a href="#1-node" class="headerlink" title="1.node"></a>1.node</h1><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
+</ul>
+<h2 id="1-1-node是什么"><a href="#1-1-node是什么" class="headerlink" title="1.1. node是什么?"></a>1.1. node是什么?</h2><a id="more"></a> 
+<ul>
+<li>js 我们知道可以在浏览器中运行</li>
+<li>node 中也包含 js 解析引擎( node 现在用的就是 V8 引擎!，速度非常快)</li>
+<li>php 后端使用的语言 (后端写的代码是服务器!)<ul>
+<li>区分前端和后端(就看最终代码是在哪里执行的，在浏览器中执行，就是前端写的)</li>
+</ul>
+</li>
+<li><p>node 【<em>其实是一个包含的js解析引擎(V8)的软件!</em>】 （可以在后端使用）</p>
+<ul>
+<li>有了 js 解析引擎就会解析js代码</li>
+<li>node只需要自己一个人就可以当服务器软件.</li>
+<li>node 中代码，可以接收前端浏览器发来的请求，并返回相应的数据!</li>
+</ul>
+</li>
+<li><p>浏览器的 js</p>
+<ul>
+<li>可以通过 js 操作 html</li>
+<li>DOM (和操作 html 有关), BOM (和浏览器有关), ECMA (就是 js 语法规范)</li>
+</ul>
+</li>
+<li>node中的js<ul>
+<li>没有 DOM ,没有 BOM ,有 ECMA</li>
+<li>没有 window (也就是说没有 wiondow 对象)</li>
+<li>一个文件就是一个模块！文件中定义的变量，只能在这个文件中使用!</li>
+<li>node 中有一个全局的对象 global ，在任何目录下都可以访问它的属性。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-node-安装"><a href="#1-2-node-安装" class="headerlink" title="1.2. node 安装"></a>1.2. node 安装</h2><h2 id="1-3-node-中引入模块，和暴露数据"><a href="#1-3-node-中引入模块，和暴露数据" class="headerlink" title="1.3 node 中引入模块，和暴露数据"></a>1.3 node 中引入模块，和暴露数据</h2><ul>
+<li>引入模块,使用 node 中提供的 <code>require(&#39;./jakc.js&#39;)</code>方法</li>
+<li>暴露数据使用的是 <code>module.exports = {xxx}</code><br>  或者 <code>exports.xxx = yyy</code></li>
+<li>node 模块:<ul>
+<li>核心模块(只要安装了node就会有的模块,已经被打包到了 node.exe 文件)</li>
+<li>自定义模块(我们自己写的js模块)</li>
+<li>第三方的模块(包)</li>
+</ul>
+</li>
+<li>nodemon 安装: <code>npm install nodemon -g</code> <ul>
+<li>在开发介绍能用它代替 node 命令</li>
+<li>作用：能够自动监视文件的变化，自动重启</li>
+</ul>
+</li>
+</ul>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><ul>
+<li>node package manager</li>
+<li>node 的包管理工具，管理的是第三方包</li>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="external">官网</a></li>
+<li>也能管理前端的包</li>
+<li>安装包<br>  +初始化: <code>npm init</code><br>  +<code>npm install &lt;包名&gt;</code></li>
+</ul>
+<h3 id="node-中不仅包含js解析引擎，还包含服务器软件的功能"><a href="#node-中不仅包含js解析引擎，还包含服务器软件的功能" class="headerlink" title="node 中不仅包含js解析引擎，还包含服务器软件的功能"></a>node 中不仅包含js解析引擎，还包含服务器软件的功能</h3><ul>
+<li>我们电脑上只要安装了 node ,不需要其他的软件配置，就能够开启一个 http 服务</li>
+</ul>
+<h2 id="1-4-node-中常用模块"><a href="#1-4-node-中常用模块" class="headerlink" title="1.4 node 中常用模块"></a>1.4 node 中常用模块</h2><h3 id="1-4-1-http-模块"><a href="#1-4-1-http-模块" class="headerlink" title="1.4.1 http 模块"></a>1.4.1 http 模块</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这里的代码我们要用node执行! </span></div><div class="line"></div><div class="line"><span class="comment">//  我们现在的目是创建一个http服务，让别人来访问!</span></div><div class="line"></div><div class="line"><span class="comment">// 1. 要引入一个http模块</span></div><div class="line"><span class="comment">// 这个'http'是固定的,是node环境中的内置模块</span></div><div class="line"><span class="comment">// 这个http模块对应的代码已经被放到node.exe这个文件中</span></div><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 2. 创建一个服务,得到服务对象!</span></div><div class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</div><div class="line">    <span class="comment">// 用户请求的数据在request对象里，返回数据通过response来做</span></div><div class="line">    <span class="comment">// 这个request对象包含了浏览器发来的请求的数据</span></div><div class="line">    <span class="comment">// response这个对象用来给我们的浏览器（前端）返回一些数据</span></div><div class="line">   <span class="comment">// 结束当请求</span></div><div class="line">    response.end(<span class="string">'wo-lai-chi-fan-le'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3.监听</span></div><div class="line"><span class="comment">// // 第一个参数：端口, 如果监听80端口的话，访问时可以不写端口号！</span></div><div class="line"><span class="comment">// // 第二个参数：服务器ip，身份的标识:只有你们访问的地址是这个ip时我这边才接收</span></div><div class="line"><span class="comment">// 127.0.0.1指的是本机!后面的ip可以默认省略！省略的话，可以用127.0.0.1,或者localhost或者本机ip访问！</span></div><div class="line">server.listen(<span class="number">3000</span>,<span class="string">'127.0.0.1'</span>)</div></pre></td></tr></table></figure>
+<h3 id="1-4-2-url-模块"><a href="#1-4-2-url-模块" class="headerlink" title="1.4.2 url 模块"></a>1.4.2 url 模块</h3><ul>
+<li><code>var url = require(&#39;url&#39;)</code><ul>
+<li>这个是 node 中的核心模块，用来处理用户请求的 url 的!</li>
+<li>这个 request.url 得到的是用户访问的地址(不包含 ip 和端口)</li>
+</ul>
+</li>
+<li><code>url.parse(request.url,true)</code><ul>
+<li>对url进行处理,形如：<a href="http://www.baidu.com/home/xxxx.html?la=b&amp;c=2#sfa" target="_blank" rel="external">http://www.baidu.com/home/xxxx.html?la=b&amp;c=2#sfa</a></li>
+<li>这个 parse 方法，可以帮助我们得到 url 中的不同部分,使我们不需要自己分割字符串</li>
+<li>第一个参数，是我们要处理的 url</li>
+<li>第二个参数，默认为 false ,为 true 时,得到的结果里的 query ,是一个对象,对象的属性就是我们传入的参数</li>
+<li>url.parse()这个方法，转换不了a=3&amp;b=4这种形式的数据!</li>
+</ul>
+</li>
+<li>例如：<ul>
+<li>url为：<a href="http://127.0.0.1:3000/home/index.html?a=3&amp;b=4" target="_blank" rel="external">http://127.0.0.1:3000/home/index.html?a=3&amp;b=4</a></li>
+<li>var obj = url.parse(request.url,true)</li>
+<li><code>obj.pathname</code>–&gt; /home/index.html</li>
+<li><code>obj.path</code>–&gt; /home/index.html?a=3&amp;b=4</li>
+<li><code>obj.search</code>–&gt; ?a=3&amp;b=4</li>
+<li><code>obj.query</code>–&gt; a=3&amp;b=4 ：{a:3,b:4}</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-3-querystring"><a href="#1-4-3-querystring" class="headerlink" title="1.4.3 querystring"></a>1.4.3 querystring</h3><ul>
+<li><code>const querystring = require(&#39;querystring&#39;)</code>引入核心模块</li>
+<li><code>querystring.parse(&#39;mymsg=xxx&amp;nickname=yyyy&#39;)</code></li>
+<li>用来转换形如：<code>mymsg=xxx&amp;nickname=yyyy</code>的字符串转化为对象形式</li>
+<li>post 请求得到数据就是这种形式的字符串，可以通过<code>const obj = querystring.parse(str)</code>转换为对象操作</li>
+</ul>
+<h3 id="1-4-4-fs-文件操作模块"><a href="#1-4-4-fs-文件操作模块" class="headerlink" title="1.4.4 fs 文件操作模块"></a>1.4.4 fs 文件操作模块</h3><ul>
+<li>这个模块是用来进行文件操作,提供很多方法操作文件</li>
+<li>文件操作: <ul>
+<li><code>var fs  = require(&#39;fs&#39;) // 引入核心模块</code></li>
+<li>读取文件: <code>fs.readFileSync(&lt;文件路径&gt;,&lt;编码,如:utf8&gt;)</code></li>
+<li>读写文件: <code>fs.writeFileSync(&lt;文件路径&gt;,&lt;文件内容&gt;)</code></li>
+<li>追加内容: <code>fs.appendFileSync(&lt;文件路径&gt;,&lt;文件内容&gt;)</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="comment">// readFileSync读取文件:</span></div><div class="line"><span class="comment">// 参数1：文件路径，参数2： 文件编码</span></div><div class="line"><span class="comment">// 返回值： 读取到的文件内容:</span></div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</div><div class="line">response.end(data)<span class="comment">//返回文件内容</span></div><div class="line"><span class="comment">// 写入文件</span></div><div class="line"><span class="comment">// 参数1：是要写入的文件目录,参数2:是要写入的内容!</span></div><div class="line"><span class="comment">// 这个方法执行时会【覆盖】之前的文件内容!</span></div><div class="line">fs.writeFileSync(<span class="string">'./tmp.txt'</span>,<span class="string">'我是中国人，我爱自己的祖国!'</span>)</div><div class="line"><span class="comment">// 追加文件</span></div><div class="line">fs.appendFileSync(<span class="string">'./xx.js'</span>,<span class="string">'我是小明，我在哪里?\r\n'</span>)</div><div class="line"> </div><div class="line">    <span class="comment">// 判断目录是否存在，如果不存在，则创建</span></div><div class="line">    <span class="keyword">var</span> result = fs.existsSync(<span class="string">'data'</span>) <span class="comment">// 判断当前目录是否存在data目录</span></div><div class="line">    <span class="keyword">if</span>(!result)&#123;</div><div class="line">    <span class="built_in">console</span>.log(result)</div><div class="line">    <span class="comment">// 创建目录</span></div><div class="line">    fs.mkdirSync(<span class="string">'data'</span>)<span class="comment">// 在当前目录创建data目录</span></div><div class="line">    &#125;</div><div class="line">    fs.appendFileSync(<span class="string">'./data/xx.js'</span>,<span class="built_in">Math</span>.random().toString())</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-4-5-express第三方包"><a href="#1-4-5-express第三方包" class="headerlink" title="1.4.5 express第三方包"></a>1.4.5 express第三方包</h3><ul>
+<li>通过npm 安装: <code>npm install express --save</code></li>
+<li>1.引包 <code>const express = require(&#39;express&#39;)</code></li>
+<li>2.得到app对象 <code>const app = express()</code> // 可以用来配置规则</li>
+<li>3.配置规则<code>app.[method]([pathname], function(req,res){response.send()})</code><ul>
+<li>条件1: 前端发的请求类型要与[method]一致</li>
+<li>条件2: 前端发的请求的url中的 pathname 要等于[pathname]</li>
+<li>满足条件1，条件2，对应的回调会被执行!</li>
+<li><code>response.send()</code> 要返回的内容。send是express为我们加的方法!与end的方法的不同点是,参数可以是对象，内部会帮助我们把这个对象转换为字符串返回给浏览器</li>
+</ul>
+</li>
+<li><code>app.use(express.static(&#39;./www&#39;))</code>这个用来自动监视请求,根据请求返回相应的静态文件。指定参数www,表明会自动去www目录找文件！它会直接帮助我们把文件读取出来(默认是index.html文件，如果没有需要手动在地址栏输入文件名)，并返回给用户</li>
+</ul>
+<h3 id="1-4-6-body-parser第三方包"><a href="#1-4-6-body-parser第三方包" class="headerlink" title="1.4.6 body-parser第三方包"></a>1.4.6 body-parser第三方包</h3><ul>
+<li>这个第三方包可以用来接收post请求参数!</li>
+<li>body-parser这个包会把我们的post请求的参数转换为对象，然后把这个对象的值赋值给req.body</li>
+<li>通过npm 安装: <code>npm install body-parser --save</code></li>
+<li>引包<code>const bodyParser  = require(&#39;body-parser&#39;)</code></li>
+<li><code>app.use(bodyParser.urlencoded())</code></li>
+<li>(只能有一个监听，已经给 express 了所以将 body-parser 和 express 关联起来,当 express 接收到 post 请求后交给 body-parser ,然后把 post 请求参数转换为对象，并放在 req.body 中)</li>
+<li>express 项目中通常使用 body-parser 进行 post 参数的解析，最常用的是其中的 json 和 urlencoded 的 parser ，可分别对以 JSON 格式的 post 参数和 urlencoeded 的 post 参数进行解析，均可获得一个 JSON 化的 req.body ，如：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    &#123;</div><div class="line">    <span class="string">"username"</span>: <span class="string">"user"</span>,</div><div class="line">    <span class="string">"password"</span>: <span class="string">"pass"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="1-4-7-模板引擎"><a href="#1-4-7-模板引擎" class="headerlink" title="1.4.7 模板引擎"></a>1.4.7 模板引擎</h3><ul>
+<li><p>art-template</p>
+<ul>
+<li>[浏览器]</li>
+<li>node, js能不能判断我自己的是node中还是浏览器!</li>
+</ul>
+</li>
+<li><p>在node中使用art-template</p>
+</li>
+<li>安装包: <code>npm install art-template --save</code></li>
+<li>使用</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1.引入art-template</span></div><div class="line"><span class="keyword">const</span> template = <span class="built_in">require</span>(<span class="string">'art-template'</span>)</div><div class="line">template.config(<span class="string">'cache'</span>,<span class="literal">false</span>) </div><div class="line"><span class="comment">// 默认第二个参数为true，只读一次</span></div><div class="line"><span class="comment">//改为false后，禁止缓存，每次都会读取模板</span></div><div class="line"></div><div class="line"><span class="comment">// 2.申明一个对象，用于在模板中使用</span></div><div class="line"><span class="keyword">const</span> data = &#123;<span class="attr">msg</span>:<span class="string">'我是中国人，我爱自己的祖国!'</span>&#125;</div><div class="line"></div><div class="line"><span class="comment">// 3.调用template方法，读取模板！</span></div><div class="line"><span class="comment">// 第一个参数是路径,不需要写.html后缀名</span></div><div class="line"><span class="comment">// 第二个参数是模板中要使用的数据</span></div><div class="line"><span class="comment">// 这里/mytest 对应 mytest.html</span></div><div class="line"><span class="comment">// a.先找到相应的文件，读取出来,</span></div><div class="line"><span class="comment">// b.把data中的数据替换到找到的文件中</span></div><div class="line"><span class="comment">// c.把替换后的字符串,作为结果返回</span></div><div class="line"><span class="keyword">const</span> html= template(__dirname+<span class="string">'/mytest'</span>,data)</div><div class="line"><span class="built_in">console</span>.log(html)</div></pre></td></tr></table></figure>
+<ul>
+<li>例如：如果想遍历data中的goods数组可以使用each：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;&#123; each goods&#125;&#125;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;!-- $value相当每遍历的对象 --&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.id&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.goodsname&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.price&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.size&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/delete?id=&#123;&#123;$value.id&#125;&#125;"&gt;删除&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/edit.html?id=&#123;&#123;$value.id&#125;&#125;"&gt;修改&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">&#123;&#123;/each &#125;&#125;</div></pre></td></tr></table></figure>
+<h2 id="dirname-和-firename"><a href="#dirname-和-firename" class="headerlink" title="dirname 和 firename"></a><strong>dirname 和 </strong>firename</h2><ol>
+<li>__dirname 可在任意文件中直接使用,值表示当前文件所在路径字符串</li>
+<li>__firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</li>
+</ol>
+<h2 id="重定向-即要求浏览器跳转到另一个地址"><a href="#重定向-即要求浏览器跳转到另一个地址" class="headerlink" title="重定向!(即要求浏览器跳转到另一个地址):"></a>重定向!(即要求浏览器跳转到另一个地址):</h2><ul>
+<li>浏览器接收到数据后会重新向新地址跳转!<br>  <code>response.setHeader(&#39;Location&#39;,&lt;新地址&gt;)</code><br>  <code>response.writeHead(302)</code><br>  <code>response.end()</code></li>
+<li>在响应头里加上 Location :’新地址’,并设置状态为302</li>
+<li><code>res.setHeader(&#39;key&#39;,&#39;value&#39;)</code>// 设置响应头</li>
+<li><code>res.writeHead(状态码)</code>// 设置状态码!</li>
+</ul>
+<h2 id="使用http发送请求！"><a href="#使用http发送请求！" class="headerlink" title="使用http发送请求！"></a>使用http发送请求！</h2><ul>
+<li>不是只有浏览器可以发http请求，别人也可以发这样的请求!</li>
+<li>跨域!, 是浏览器对js限制，不是所以http都是禁跨域的!</li>
+<li>get/post 什么时候用!<ul>
+<li>get 用来主动获取数据!(如：获取端口信息，获取员工列表！)</li>
+<li>post 修改 / 添加 / 删除</li>
+<li>可以通过当前请求会不会能我们的数据产生变化来区分</li>
+</ul>
+</li>
+</ul>
+<h2 id="post请求接收用户参数"><a href="#post请求接收用户参数" class="headerlink" title="post请求接收用户参数!"></a>post请求接收用户参数!</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">''</span></div><div class="line"><span class="comment">// 需要通过事件接收post请求参数!</span></div><div class="line"><span class="comment">// on方法监听事件,data是事件名</span></div><div class="line"></div><div class="line"><span class="comment">// a.这个data事件会不断被触发，直到，数据接收完成,</span></div><div class="line"><span class="comment">//   每触发当前data事件时，会把一小块数据传递过来(chunk)</span></div><div class="line">request.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">    <span class="comment">// 数据从浏览器发过来，是一块一块的，需要拼接</span></div><div class="line">    str += chunk</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// b.数据接收完成的事件end</span></div><div class="line">request.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 这个事件表明，我们的数据接收完成了!</span></div><div class="line">    <span class="built_in">console</span>.log(str)</div><div class="line">    <span class="keyword">const</span> obj  = querystring.parse(str)</div><div class="line">    <span class="built_in">console</span>.log(obj)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'哈哈，完成了!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="post"><a href="#post" class="headerlink" title="post"></a>post</h3><ul>
+<li><p>在node环境，它是知道数据是什么时候来的</p>
+<ul>
+<li>是一块一块的来!(就像下载数据时，一点一点的下载一样!)</li>
+<li><p>当某一块数据来的时候，node会通知我们：</p>
+<ul>
+<li>on方法是用来监听事件,data是事件，是当前node底层接收到数据时触发</li>
+<li><p>var str = ‘’</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">request.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当事件触发的时候执行这个事件</span></div><div class="line">    <span class="comment">// 这个事件会被多次触发(有一块数据来，就触发一次,通过参数把这一个数据传递过来!)</span></div><div class="line">    <span class="comment">// 当数据接收完成就不再触发</span></div><div class="line">    str += chunk</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">request.on(<span class="string">'end'</span>, fuction()&#123;</div><div class="line">    <span class="comment">// 这个事件只是表明，数据接收完成</span></div><div class="line">    <span class="comment">// 如果要在数据接收完成[后]做一些事情，就在这里写代码!</span></div><div class="line">    &#125;)</div></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/20/node/" class="archive-article-date">
+  	<time datetime="2016-12-20T15:39:28.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-20</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/20/seajs-requirejs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">seajs和requirejs</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Alian
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/requirejs/" style="font-size: 10px;">requirejs</a> <a href="/tags/seajs/" style="font-size: 10px;">seajs</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接1</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接2</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接3</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接4</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接5</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">友情链接6</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
