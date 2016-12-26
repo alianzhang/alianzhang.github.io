@@ -20,7 +20,7 @@
 官网
 
 1.1. node是什么?">
-<meta property="og:updated_time" content="2016-12-21T15:42:15.745Z">
+<meta property="og:updated_time" content="2016-12-26T14:17:29.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node初学者总结">
 <meta name="twitter:description" content="1.node
@@ -185,7 +185,7 @@
 </li>
 <li><p>node 【<em>其实是一个包含的js解析引擎(V8)的软件!</em>】 （可以在后端使用）</p>
 <ul>
-<li>有了 js 解析引擎就会解析js代码</li>
+<li>有了 js 解析引擎就会解析js代码   </li>
 <li>node只需要自己一个人就可以当服务器软件.</li>
 <li>node 中代码，可以接收前端浏览器发来的请求，并返回相应的数据!</li>
 </ul>
@@ -254,6 +254,41 @@
 </ul>
 </li>
 </ul>
+<h4 id="使用http发送请求！"><a href="#使用http发送请求！" class="headerlink" title="使用http发送请求！"></a>使用http发送请求！</h4><ul>
+<li>不是只有浏览器可以发http请求，别人也可以发这样的请求!</li>
+<li>跨域!, 是浏览器对js限制，不是所以http都是禁跨域的!</li>
+<li>get/post 什么时候用!<ul>
+<li>get 用来主动获取数据!(如：获取端口信息，获取员工列表！)</li>
+<li>post 修改 / 添加 / 删除</li>
+<li>可以通过当前请求会不会能我们的数据产生变化来区分</li>
+</ul>
+</li>
+</ul>
+<h5 id="post请求接收用户参数"><a href="#post请求接收用户参数" class="headerlink" title="post请求接收用户参数!"></a>post请求接收用户参数!</h5><ul>
+<li>post请求几种常见类型</li>
+</ul>
+<ol>
+<li>application/www-form-ulrencoded </li>
+<li>multipart/form-data</li>
+<li>application/json </li>
+<li>text/xml</li>
+</ol>
+<ul>
+<li>在node环境，它是知道数据是什么时候来的<ul>
+<li>是一块一块的来!(就像下载数据时，一点一点的下载一样!)</li>
+<li>当某一块数据来的时候，node会通知我们：<ul>
+<li>on方法是用来监听事件,data是事件，是当前node底层接收到数据时触发</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">''</span></div><div class="line"><span class="comment">// 需要通过事件接收post请求参数!</span></div><div class="line"><span class="comment">// on方法监听事件,data是事件名</span></div><div class="line"></div><div class="line"><span class="comment">// a.这个data事件会不断被触发，直到，数据接收完成,</span></div><div class="line"><span class="comment">//   每触发当前data事件时，会把一小块数据传递过来(chunk)</span></div><div class="line">request.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">    <span class="comment">// 数据从浏览器发过来，是一块一块的，需要拼接</span></div><div class="line">    str += chunk</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// b.数据接收完成的事件end</span></div><div class="line">request.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 这个事件表明，我们的数据接收完成了!</span></div><div class="line">    <span class="comment">// 如果要在数据接收完成[后]做一些事情，就在这里写代码!</span></div><div class="line">    <span class="built_in">console</span>.log(str)</div><div class="line">    <span class="keyword">const</span> obj  = querystring.parse(str)</div><div class="line">    <span class="built_in">console</span>.log(obj)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'哈哈，完成了!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h5 id="get"><a href="#get" class="headerlink" title="get"></a>get</h5><h3 id="1-4-3-path"><a href="#1-4-3-path" class="headerlink" title="1.4.3 path"></a>1.4.3 path</h3><ul>
+<li>核心模块，对路径进行操作</li>
+<li><code>path.join</code>会自动拼接路径</li>
+<li><code>path.basename(files.name.path)</code>可以得到文件的名字，其中<code>files.name.path</code>是文件上传后的路径</li>
+</ul>
 <h3 id="1-4-3-querystring"><a href="#1-4-3-querystring" class="headerlink" title="1.4.3 querystring"></a>1.4.3 querystring</h3><ul>
 <li><code>const querystring = require(&#39;querystring&#39;)</code>引入核心模块</li>
 <li><code>querystring.parse(&#39;mymsg=xxx&amp;nickname=yyyy&#39;)</code></li>
@@ -266,23 +301,63 @@
 <li><code>var fs  = require(&#39;fs&#39;) // 引入核心模块</code></li>
 <li>读取文件: <code>fs.readFileSync(&lt;文件路径&gt;,&lt;编码,如:utf8&gt;)</code></li>
 <li>读写文件: <code>fs.writeFileSync(&lt;文件路径&gt;,&lt;文件内容&gt;)</code></li>
-<li>追加内容: <code>fs.appendFileSync(&lt;文件路径&gt;,&lt;文件内容&gt;)</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="comment">// readFileSync读取文件:</span></div><div class="line"><span class="comment">// 参数1：文件路径，参数2： 文件编码</span></div><div class="line"><span class="comment">// 返回值： 读取到的文件内容:</span></div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</div><div class="line">response.end(data)<span class="comment">//返回文件内容</span></div><div class="line"><span class="comment">// 写入文件</span></div><div class="line"><span class="comment">// 参数1：是要写入的文件目录,参数2:是要写入的内容!</span></div><div class="line"><span class="comment">// 这个方法执行时会【覆盖】之前的文件内容!</span></div><div class="line">fs.writeFileSync(<span class="string">'./tmp.txt'</span>,<span class="string">'我是中国人，我爱自己的祖国!'</span>)</div><div class="line"><span class="comment">// 追加文件</span></div><div class="line">fs.appendFileSync(<span class="string">'./xx.js'</span>,<span class="string">'我是小明，我在哪里?\r\n'</span>)</div><div class="line"> </div><div class="line">    <span class="comment">// 判断目录是否存在，如果不存在，则创建</span></div><div class="line">    <span class="keyword">var</span> result = fs.existsSync(<span class="string">'data'</span>) <span class="comment">// 判断当前目录是否存在data目录</span></div><div class="line">    <span class="keyword">if</span>(!result)&#123;</div><div class="line">    <span class="built_in">console</span>.log(result)</div><div class="line">    <span class="comment">// 创建目录</span></div><div class="line">    fs.mkdirSync(<span class="string">'data'</span>)<span class="comment">// 在当前目录创建data目录</span></div><div class="line">    &#125;</div><div class="line">    fs.appendFileSync(<span class="string">'./data/xx.js'</span>,<span class="built_in">Math</span>.random().toString())</div></pre></td></tr></table></figure>
-</li>
+<li>追加内容: <code>fs.appendFileSync(&lt;文件路径&gt;,&lt;文件内容&gt;)</code></li>
 </ul>
 </li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="comment">// readFileSync读取文件:</span></div><div class="line"><span class="comment">// 参数1：文件路径，参数2： 文件编码</span></div><div class="line"><span class="comment">// 返回值： 读取到的文件内容:</span></div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</div><div class="line">response.end(data)<span class="comment">//返回文件内容</span></div><div class="line"><span class="comment">// 写入文件</span></div><div class="line"><span class="comment">// 参数1：是要写入的文件目录,参数2:是要写入的内容!</span></div><div class="line"><span class="comment">// 这个方法执行时会【覆盖】之前的文件内容!</span></div><div class="line">fs.writeFileSync(<span class="string">'./tmp.txt'</span>,<span class="string">'我是中国人，我爱自己的祖国!'</span>)</div><div class="line"><span class="comment">// 追加文件</span></div><div class="line">fs.appendFileSync(<span class="string">'./xx.js'</span>,<span class="string">'我是小明，我在哪里?\r\n'</span>)</div><div class="line"> </div><div class="line"><span class="comment">// 判断目录是否存在，如果不存在，则创建</span></div><div class="line"><span class="keyword">var</span> result = fs.existsSync(<span class="string">'data'</span>) <span class="comment">// 判断当前目录是否存在data目录</span></div><div class="line"><span class="keyword">if</span>(!result)&#123;</div><div class="line"><span class="built_in">console</span>.log(result)</div><div class="line"><span class="comment">// 创建目录</span></div><div class="line">fs.mkdirSync(<span class="string">'data'</span>)<span class="comment">// 在当前目录创建data目录</span></div><div class="line">&#125;</div><div class="line">fs.appendFileSync(<span class="string">'./data/xx.js'</span>,<span class="built_in">Math</span>.random().toString())</div></pre></td></tr></table></figure>
 <h3 id="1-4-5-express第三方包"><a href="#1-4-5-express第三方包" class="headerlink" title="1.4.5 express第三方包"></a>1.4.5 express第三方包</h3><ul>
 <li>通过npm 安装: <code>npm install express --save</code></li>
 <li>1.引包 <code>const express = require(&#39;express&#39;)</code></li>
 <li>2.得到app对象 <code>const app = express()</code> // 可以用来配置规则</li>
-<li>3.配置规则<code>app.[method]([pathname], function(req,res){response.send()})</code><ul>
+<li>3.配置规则<code>app.[method]([pathname], function(req,res){})</code><ul>
 <li>条件1: 前端发的请求类型要与[method]一致</li>
 <li>条件2: 前端发的请求的url中的 pathname 要等于[pathname]</li>
 <li>满足条件1，条件2，对应的回调会被执行!</li>
+<li>如：<code>app.get(&#39;/delete&#39;,function(req, res){ console.log(req.query)}</code>req.qeury 是get请求的参数！</li>
+<li>如：<code>app.post(&#39;/add&#39;,function(req, res){console.log(req.body)}</code>bodyparser会接收post请求参数,然后把请求参数转换为对象,把这个对象放到req.body</li>
 <li><code>response.send()</code> 要返回的内容。send是express为我们加的方法!与end的方法的不同点是,参数可以是对象，内部会帮助我们把这个对象转换为字符串返回给浏览器</li>
 </ul>
 </li>
-<li><code>app.use(express.static(&#39;./www&#39;))</code>这个用来自动监视请求,根据请求返回相应的静态文件。指定参数www,表明会自动去www目录找文件！它会直接帮助我们把文件读取出来(默认是index.html文件，如果没有需要手动在地址栏输入文件名)，并返回给用户</li>
+<li><code>app.use(express.static(&#39;./www&#39;))</code>这个用来自动监视请求,根据请求返回相应的静态文件。指定参数www,表明会自动去www目录找文件！它会直接帮助我们把文件读取出来，并返回给用户(默认是index.html文件，如果没有index文件，则需要手动在地址栏输入文件名,如果www下有手动输入的这个文件就读取出来，如果没有则会去匹配下一条规则)<br>*<code>app.use(express.static(&#39;./www&#39;))</code>相当于<code>app.use(&#39;/index&#39;,function(req, res, next ){next()})</code>调用next()这个方法，就会去匹配下一条规则</li>
+</ul>
+<h4 id="express中app-use规则"><a href="#express中app-use规则" class="headerlink" title="express中app.use规则"></a>express中app.use规则</h4><ul>
+<li>能够匹配所有类型，所有的请求!<br>当匹配到规则，默认是不会继续匹配下一个规则的!<br>如果想在匹配到一个规则后，继续匹配下一个规则，调用next()方法<br><code>app.use()</code>需要传递一个<code>function(req, res, next)</code></li>
+</ul>
+<h4 id="express-Router"><a href="#express-Router" class="headerlink" title="express Router"></a>express Router</h4><ul>
+<li><p>路由<br>就是根据不同的url,得到不同的数据，渲染出来</p>
+</li>
+<li><p>前端中的路由(angular)</p>
+</li>
+<li><p>根据锚点(也是url中一部分)的变化，在页面显示不同的内容</p>
+</li>
+<li><p>express中路由</p>
+</li>
+<li><p>根据前端请求url的pathname的不同值，来返回不同的数据</p>
+</li>
+<li><p>首页通过指定路由地址获取到对应的页面，代码如下：</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">const</span> app = express()</div><div class="line"><span class="comment">//根据指定路由访问</span></div><div class="line"><span class="keyword">const</span> home = <span class="built_in">require</span>(<span class="string">'./home.js'</span>)</div><div class="line"><span class="keyword">const</span> article = <span class="built_in">require</span>(<span class="string">'./article.js'</span>)</div><div class="line"></div><div class="line">app.use(home)<span class="comment">// 加上home里的规则</span></div><div class="line">app.use(article)<span class="comment">// 加上article里的规则</span></div><div class="line"></div><div class="line"><span class="comment">// app.get只接收get请求</span></div><div class="line">app.get(<span class="string">'/test'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  res.send(<span class="string">'哈哈'</span>)</div><div class="line">&#125;)</div><div class="line"><span class="comment">//app.use 也是可以写规则</span></div><div class="line"><span class="comment">// 这个use会接收所有的前端的请求(所有类型的请求)</span></div><div class="line"><span class="comment">// 我们可以写多个 app.use,当匹配到一个时，不再匹配下一个app.use</span></div><div class="line"><span class="comment">// 如果只传递一个function,那么它会接收到所有的请求!</span></div><div class="line"><span class="comment">// 如果传递两参数，第一个是字符串时，会被当作规则匹配!</span></div><div class="line"><span class="comment">// 匹配规则时，如果第一个规则匹配，则不匹配后面的规则</span></div><div class="line"><span class="comment">// 如果不匹配前面的规则，则匹配下一个规则</span></div><div class="line"><span class="comment">// 可以用来处理404错误</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">   res.status(<span class="number">404</span>).send(<span class="string">'&lt;h1&gt;你404了!&lt;/h1&gt;'</span>)</div><div class="line">&#125;)</div><div class="line">app.listen(<span class="number">3000</span>,<span class="string">'127.0.0.1'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'127.0.0.1:3000'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>home.js文件代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">const</span> app = express()</div><div class="line"><span class="keyword">const</span> home = express.Router()</div><div class="line"><span class="comment">// 定义获取首页数据规则</span></div><div class="line">home.get(<span class="string">'/getdata'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  res.send(<span class="string">'这是我们的数据'</span>)</div><div class="line">&#125;)</div><div class="line"> <span class="comment">// 定义修改数据规则</span></div><div class="line">app.use(<span class="string">'/edit'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  res.send(<span class="string">'修改成功!'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//暴露路由</span></div><div class="line"><span class="built_in">module</span>.exports = home</div></pre></td></tr></table></figure>
+<ul>
+<li>artilce.js文件代码：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">const</span> artilce = <span class="keyword">new</span> express.Router()</div><div class="line"></div><div class="line"><span class="comment">// 获取文章内容</span></div><div class="line">artilce.get(<span class="string">'/info'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  res.send(<span class="string">'这是我们文章的信息'</span>)</div><div class="line">&#125;) </div><div class="line"><span class="comment">//暴露路由</span></div><div class="line"><span class="built_in">module</span>.exports = home</div></pre></td></tr></table></figure>
+<h4 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a>express-session</h4><ul>
+<li><ul>
+<li>安装: <code>npm install express-session --save</code></li>
+</ul>
+</li>
+<li>配合express来做登陆的第三方包</li>
+<li>用来处理用户登陆的，会自动保存用户的信息并且会吧唯一标识写入到响应头：Srt-Cookie，还会自动读取浏览器发来的消息（指的是Cookie）<ul>
+<li>1.引入</li>
+<li>2.app.use（session（））</li>
+</ul>
+</li>
 </ul>
 <h3 id="1-4-6-body-parser第三方包"><a href="#1-4-6-body-parser第三方包" class="headerlink" title="1.4.6 body-parser第三方包"></a>1.4.6 body-parser第三方包</h3><ul>
 <li>这个第三方包可以用来接收post请求参数!</li>
@@ -311,6 +386,94 @@
 <li>例如：如果想遍历data中的goods数组可以使用each：</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;&#123; each goods&#125;&#125;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;!-- $value相当每遍历的对象 --&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.id&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.goodsname&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.price&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.size&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/delete?id=&#123;&#123;$value.id&#125;&#125;"&gt;删除&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/edit.html?id=&#123;&#123;$value.id&#125;&#125;"&gt;修改&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">&#123;&#123;/each &#125;&#125;</div></pre></td></tr></table></figure>
+<h3 id="1-4-8-mongodb"><a href="#1-4-8-mongodb" class="headerlink" title="1.4.8 mongodb"></a>1.4.8 mongodb</h3><ul>
+<li>1.打开mongodb软件</li>
+<li><p>安装的bin目录: 以管理员身份打开cmd</p>
+<ul>
+<li>执行: <code>mongod --dbpath=../db_itcast</code><ul>
+<li>–dbpath 指定所有的数据库存储的路径! </li>
+<li>注意: db_itcast这个目录一定要【先创建】</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.我们要往数据库存数据<br>到安装目录bin:打开cmd</p>
+<ul>
+<li>执行: <code>mongo</code></li>
+<li>存储东西!</li>
+<li>存储之前要指定我们要用的数据库(就相当于excel文件)</li>
+<li>比如我们要把数据存储到test这个数据库中!<ul>
+<li>指定要操作的数据库: <code>use test</code> (就相当于打开了一个excel文件)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ol>
+<li>我们把一类数据(商品)存储到test中<ul>
+<li><code>db.mygoodss.insert({name:&#39;营养品&#39;,price:998})</code></li>
+<li>上面这个命令，就相当在excel中的一个sheet中添加了一行数据!</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>查我们之前存的东西:<ul>
+<li><code>db.mygoodss.find({})</code></li>
+<li>find方法中的对象就是查询条件</li>
+<li>如果传入一个空对象，就查找所有数据</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li>删除数据<ul>
+<li><code>db.mygoodss.remove({})</code></li>
+<li>remove方法中的对象就是删除条件</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><ol>
+<li><p>修改数据(更新,update)</p>
+<ul>
+<li><code>db.qiantai.update({age:12},{age:18})</code> // 这个命令操作后新数据会覆盖查找到的数据</li>
+<li>原来数据是: {name:”水骑士安全”,age:12}</li>
+<li><p>修改后的数据: {age:18}</p>
+</li>
+<li><p>如果不想覆盖原来数据，只想更改我们指定的属性</p>
+</li>
+<li>命令: <code>db.qiantai.update({age:14},{$set:{age:99}})</code></li>
+<li>原来的数据是: {name:”火骑士空空”,age:14}</li>
+<li><p>修改后的数据是: {name:”火骑士空空”,age:99}</p>
+</li>
+<li><p>update还有第三，第四个参数</p>
+</li>
+<li><code>db.qiantai.update({age:14},{$set:{age:99}},false,false)</code></li>
+<li>三，四个参数默认是false,分别表示:<ul>
+<li>三: 当为true时,如果查找不到，就把后面的数据插入进去</li>
+<li>四: 当为true时,会更新所以满足条件的数据!(默认只更新，找到的条一条数据)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="mongodb下载地址"><a href="#mongodb下载地址" class="headerlink" title="mongodb下载地址"></a>mongodb下载地址</h4><ul>
+<li><a href="https://www.mongodb.org/dl/win32/x86_64-2008plus-ssl?_ga=1.63705196.279323826.1478899468" target="_blank" rel="external">https://www.mongodb.org/dl/win32/x86_64-2008plus-ssl?_ga=1.63705196.279323826.1478899468</a></li>
+</ul>
+<h4 id="通过node代码直接将数据存储到数据库中"><a href="#通过node代码直接将数据存储到数据库中" class="headerlink" title="通过node代码直接将数据存储到数据库中"></a>通过node代码直接将数据存储到数据库中</h4><h4 id="mongodb-这个npm包专门用来把数据存储到数据库-mongodb管理的数据库"><a href="#mongodb-这个npm包专门用来把数据存储到数据库-mongodb管理的数据库" class="headerlink" title="mongodb 这个npm包专门用来把数据存储到数据库(mongodb管理的数据库)"></a>mongodb 这个npm包专门用来把数据存储到数据库(mongodb管理的数据库)</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">    <span class="keyword">const</span> mongodb = <span class="built_in">require</span>(<span class="string">'mongodb'</span>) <span class="comment">// 引包</span></div><div class="line"></div><div class="line">    <span class="keyword">const</span> MongoClient = mongodb.MongoClient <span class="comment">//这个对象就是用来连接mongodb数据库!</span></div><div class="line"></div><div class="line">    <span class="comment">// 1.建立连接(相当打电话与数据软件通信)</span></div><div class="line">    <span class="comment">// 这个goods是我们的数据库</span></div><div class="line">    MongoClient.connect(<span class="string">'mongodb://localhost:27017/goods'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,db</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当我们与数据库连接完成之后执行这里的代码</span></div><div class="line">    <span class="comment">// 参数db指向我们具体的数据库goods!</span></div><div class="line">    <span class="comment">// 这个方法，得到对前台进行操作的对象:</span></div><div class="line">    <span class="comment">// collection的参数，是我们具体的数据表的名字</span></div><div class="line">    <span class="comment">// 2. 得到要操作的集合</span></div><div class="line">    <span class="keyword">const</span> qiantai = db.collection(<span class="string">'qiantai'</span>)</div><div class="line">    </div><div class="line">    <span class="comment">//插入数据</span></div><div class="line">    qiantai.insert(&#123;<span class="attr">name</span>:<span class="string">"小月月"</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,result</span>)</span>&#123;</div><div class="line">        <span class="comment">// 当数据插入之后，就是调用这个回调函数!</span></div><div class="line">        <span class="comment">// 第二个参数，操作之后的结果</span></div><div class="line">        <span class="built_in">console</span>.log(result)</div><div class="line">        <span class="comment">// 挂电话, 关闭连接!</span></div><div class="line">        db.close()</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    <span class="comment">//查</span></div><div class="line">    <span class="comment">// 3. 通过得到的集合对象对数据进行操作</span></div><div class="line">    <span class="keyword">const</span> result = qiantai.find(&#123;<span class="attr">name</span>:<span class="string">"小月月"</span>&#125;)</div><div class="line">    <span class="comment">// 把查找到的数据，改成数组的形式</span></div><div class="line">    result.toArray(<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">        <span class="comment">// 这个data就是我们查找到的数据组成的数组</span></div><div class="line">        <span class="comment">// 如果没有数据的话，就是一个空数组!</span></div><div class="line">        <span class="built_in">console</span>.log(data)</div><div class="line">        <span class="comment">// 挂电话, 关闭连接!</span></div><div class="line">        db.close()</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//删</span></div><div class="line">    <span class="comment">// 3. 通过得到的集合对象对数据进行操作</span></div><div class="line">    qiantai.deleteMany(&#123;<span class="attr">name</span>:<span class="string">"小月月"</span>&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err,result</span>)</span>&#123;</div><div class="line">        <span class="comment">// 这个回调也是当数据删除后执行</span></div><div class="line">        <span class="built_in">console</span>.log(result)</div><div class="line">        <span class="comment">// 挂电话, 关闭连接!</span></div><div class="line">        db.close()</div><div class="line">    &#125;)</div><div class="line">    <span class="comment">//改</span></div><div class="line">    <span class="comment">// 3. 通过得到的集合对象对数据进行操作</span></div><div class="line">    qiantai.updateMany(&#123;<span class="attr">name</span>:<span class="string">'小明明'</span>&#125;,&#123;<span class="attr">$set</span>:&#123;<span class="attr">age</span>:<span class="number">4000</span>&#125;&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">err, result</span>)</span>&#123;</div><div class="line">        <span class="comment">// 这里的回调依然是更新完成调用</span></div><div class="line">        <span class="built_in">console</span>.log(result)</div><div class="line">        <span class="comment">// 挂电话, 关闭连接!</span></div><div class="line">        db.close()</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="1-4-9-formidable"><a href="#1-4-9-formidable" class="headerlink" title="1.4.9 formidable"></a>1.4.9 formidable</h3><ul>
+<li>后端专门用来接收上传上来的文件的包</li>
+<li>安装</li>
+<li>引包<code>const formidable = require(&#39;formidable&#39;)</code></li>
+<li><code>const form = new formidable.IncomingForm()</code>new一个IncomingForm()对象它会自动的帮我们接文件并保存到指定的目录</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">    app.post(<span class="string">'/imgsave'</span>, (req, res) =&gt;&#123;</div><div class="line">    <span class="keyword">const</span> form = <span class="keyword">new</span> formidable.IncomingForm()</div><div class="line">    <span class="comment">// 指定文件保存的目录</span></div><div class="line">    form.uploadDir = __dirname + <span class="string">'/public/uploads'</span></div><div class="line">    form.keepExtensions = <span class="literal">true</span> <span class="comment">// 会保持原文件的扩展名!</span></div><div class="line">    <span class="comment">// parse方法会自动接收文件，并保存起来</span></div><div class="line">    form.parse(req, <span class="function"><span class="keyword">function</span>(<span class="params">err,fields, files</span>)</span>&#123;</div><div class="line">        <span class="comment">// console.log(files)</span></div><div class="line">        <span class="comment">// C:\Users\isc\Desktop\day09\code\01.uploadFile\public\uploads\upload_24234c0b099b571796692d5793a1ed54.jpg</span></div><div class="line">        <span class="comment">// console.log(files.name.path)</span></div><div class="line"></div><div class="line">        <span class="built_in">console</span>.log(path.basename(files.name.path))</div><div class="line">        <span class="comment">// 我们应该得到上传文件的文件名，返回一个图片地址给用户!</span></div><div class="line">        res.send(&#123;<span class="attr">status</span>:<span class="string">'ok'</span>,<span class="attr">filename</span>:<span class="string">'uploads/'</span>+path.basename(files.name.path)&#125;)</div><div class="line"></div><div class="line">        <span class="comment">// 保存后调用这个fucntion</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="number">12345</span>)</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="1-4-10-captchapng"><a href="#1-4-10-captchapng" class="headerlink" title="1.4.10 captchapng"></a>1.4.10 captchapng</h3><ul>
+<li>用来生成验证码图片</li>
+</ul>
+<h3 id="1-4-11-前端分页插件"><a href="#1-4-11-前端分页插件" class="headerlink" title="1.4.11 前端分页插件"></a>1.4.11 前端分页插件</h3><p><code>npm install twbs-pagination</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//&lt;ul id="#pagination-demo"&gt;</span></div><div class="line"><span class="comment">//    &lt;li&gt;&lt;/li&gt;</span></div><div class="line"><span class="comment">//&lt;/ul&gt;</span></div><div class="line">$(<span class="string">'#pagination-demo'</span>).twbsPagination(&#123;</div><div class="line">  <span class="attr">totalPages</span>: <span class="number">35</span>,</div><div class="line">  <span class="attr">visiblePages</span>: <span class="number">7</span>,</div><div class="line">  <span class="attr">onPageClick</span>: <span class="function"><span class="keyword">function</span> (<span class="params">event, page</span>) </span>&#123;</div><div class="line">    $(<span class="string">'#page-content'</span>).text(<span class="string">'Page '</span> + page);</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <h2 id="dirname-和-firename"><a href="#dirname-和-firename" class="headerlink" title="dirname 和 firename"></a><strong>dirname 和 </strong>firename</h2><ol>
 <li>__dirname 可在任意文件中直接使用,值表示当前文件所在路径字符串</li>
 <li>__firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</li>
@@ -320,32 +483,6 @@
 <li>在响应头里加上 Location :’新地址’,并设置状态为302</li>
 <li><code>res.setHeader(&#39;key&#39;,&#39;value&#39;)</code>// 设置响应头</li>
 <li><code>res.writeHead(状态码)</code>// 设置状态码!</li>
-</ul>
-<h2 id="使用http发送请求！"><a href="#使用http发送请求！" class="headerlink" title="使用http发送请求！"></a>使用http发送请求！</h2><ul>
-<li>不是只有浏览器可以发http请求，别人也可以发这样的请求!</li>
-<li>跨域!, 是浏览器对js限制，不是所以http都是禁跨域的!</li>
-<li>get/post 什么时候用!<ul>
-<li>get 用来主动获取数据!(如：获取端口信息，获取员工列表！)</li>
-<li>post 修改 / 添加 / 删除</li>
-<li>可以通过当前请求会不会能我们的数据产生变化来区分</li>
-</ul>
-</li>
-</ul>
-<h2 id="post请求接收用户参数"><a href="#post请求接收用户参数" class="headerlink" title="post请求接收用户参数!"></a>post请求接收用户参数!</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">''</span></div><div class="line"><span class="comment">// 需要通过事件接收post请求参数!</span></div><div class="line"><span class="comment">// on方法监听事件,data是事件名</span></div><div class="line"></div><div class="line"><span class="comment">// a.这个data事件会不断被触发，直到，数据接收完成,</span></div><div class="line"><span class="comment">//   每触发当前data事件时，会把一小块数据传递过来(chunk)</span></div><div class="line">request.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">    <span class="comment">// 数据从浏览器发过来，是一块一块的，需要拼接</span></div><div class="line">    str += chunk</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// b.数据接收完成的事件end</span></div><div class="line">request.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">// 这个事件表明，我们的数据接收完成了!</span></div><div class="line">    <span class="built_in">console</span>.log(str)</div><div class="line">    <span class="keyword">const</span> obj  = querystring.parse(str)</div><div class="line">    <span class="built_in">console</span>.log(obj)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'哈哈，完成了!'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="post"><a href="#post" class="headerlink" title="post"></a>post</h3><ul>
-<li><p>在node环境，它是知道数据是什么时候来的</p>
-<ul>
-<li>是一块一块的来!(就像下载数据时，一点一点的下载一样!)</li>
-<li><p>当某一块数据来的时候，node会通知我们：</p>
-<ul>
-<li>on方法是用来监听事件,data是事件，是当前node底层接收到数据时触发</li>
-<li><p>var str = ‘’</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">request.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</div><div class="line">    <span class="comment">// 当事件触发的时候执行这个事件</span></div><div class="line">    <span class="comment">// 这个事件会被多次触发(有一块数据来，就触发一次,通过参数把这一个数据传递过来!)</span></div><div class="line">    <span class="comment">// 当数据接收完成就不再触发</span></div><div class="line">    str += chunk</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">request.on(<span class="string">'end'</span>, fuction()&#123;</div><div class="line">    <span class="comment">// 这个事件只是表明，数据接收完成</span></div><div class="line">    <span class="comment">// 如果要在数据接收完成[后]做一些事情，就在这里写代码!</span></div><div class="line">    &#125;)</div></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 
       
