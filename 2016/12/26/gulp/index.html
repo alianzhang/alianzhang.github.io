@@ -20,7 +20,7 @@ gulp插件
 官网
 gulp插件
 中文网">
-<meta property="og:updated_time" content="2016-12-27T14:24:26.071Z">
+<meta property="og:updated_time" content="2016-12-27T14:26:15.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gulp基本使用">
 <meta name="twitter:description" content="gulp
@@ -245,10 +245,8 @@ gulp插件
 </ul>
 <h4 id="2-gulp-run"><a href="#2-gulp-run" class="headerlink" title="2. gulp.run"></a>2. gulp.run</h4><ul>
 <li>run方法是用来执行其他任务</li>
-<li><p>参数是任务名,如果写成数组形式，那么数组中的元素就是要执行的任务名</p>
-</li>
-<li><p>我们可以新建一个default任务，用这个任务去启动其他任务!</p>
-</li>
+<li>参数是任务名,如果写成数组形式，那么数组中的元素就是要执行的任务名</li>
+<li>我们可以新建一个default任务，用这个任务去启动其他任务!</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    gulp.task(<span class="string">'default'</span> ,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    gulp.run([<span class="string">'mycss'</span>,<span class="string">'myhtml'</span>,<span class="string">'myscript'</span>,<span class="string">'myless'</span>])</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h4 id="3-gulp-src"><a href="#3-gulp-src" class="headerlink" title="3. gulp.src"></a>3. gulp.src</h4><pre><code>+ 作用: 匹配到我们想要处理的文件!
