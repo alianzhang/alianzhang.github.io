@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/alianzhang">
-  <title>学习中接触到的ES6总结（未完待续） | alianzhang</title>
+  <title>接触到的ES6知识点总结（未完待续） | alianzhang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ES6模板字符串
 使用``包裹, ${变量}  ,最终会输出成变量值
 在``之间，可以任意的换行!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习中接触到的ES6总结（未完待续）">
+<meta property="og:title" content="接触到的ES6知识点总结（未完待续）">
 <meta property="og:url" content="https://github.com/alianzhang/2016/11/30/ES6/index.html">
 <meta property="og:site_name" content="alianzhang">
 <meta property="og:description" content="ES6模板字符串
 使用``包裹, ${变量}  ,最终会输出成变量值
 在``之间，可以任意的换行!">
-<meta property="og:updated_time" content="2016-12-21T15:51:48.717Z">
+<meta property="og:updated_time" content="2016-12-28T05:32:24.329Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习中接触到的ES6总结（未完待续）">
+<meta name="twitter:title" content="接触到的ES6知识点总结（未完待续）">
 <meta name="twitter:description" content="ES6模板字符串
 使用``包裹, ${变量}  ,最终会输出成变量值
 在``之间，可以任意的换行!">
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      学习中接触到的ES6总结（未完待续）
+      接触到的ES6知识点总结（未完待续）
     </h1>
   
 
@@ -199,8 +199,11 @@
 </li>
 </ul>
 <h2 id="Arrows-Function"><a href="#Arrows-Function" class="headerlink" title="Arrows Function"></a>Arrows Function</h2><ul>
-<li>箭头函数,不会改变this的指向<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>)</div><div class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">// btn</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//window</span></div><div class="line"></div><div class="line">    btn.onclick = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="comment">// 不是说这里的this是window,而箭头函数不会对this产生影响!</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">//window</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure></li>
+<li>箭头函数,不会改变this的指向<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>)</div><div class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">// btn</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//window</span></div><div class="line"></div><div class="line">    btn.onclick = <span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="comment">// 不是说这里的this是window,而箭头函数不会对this产生影响!</span></div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>)<span class="comment">//window</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<h2 id="Some"><a href="#Some" class="headerlink" title="Some"></a>Some</h2><h2 id="every"><a href="#every" class="headerlink" title="every"></a>every</h2><h2 id="class构造函数"><a href="#class构造函数" class="headerlink" title="class构造函数"></a>class构造函数</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// 这样就相当于创建了一个构建函数,相当于一个语法糖!</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</div><div class="line">  <span class="comment">// constructor就是构建函数!这个名字是不能够改动! </span></div><div class="line">  <span class="keyword">constructor</span>(name,age)&#123;</div><div class="line">      <span class="comment">// 这个constructor里写的代码和原先funciton做为构选函数时写的一样</span></div><div class="line">      <span class="keyword">this</span>.username=name</div><div class="line">      <span class="keyword">this</span>.userage = age</div><div class="line">      <span class="keyword">this</span>.toWorld = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="built_in">console</span>.log(<span class="string">'世界你好'</span>)</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  sayHello()&#123; <span class="comment">// 定义了一个方法!,这个方法是定义在原型上的!</span></div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'我是User，'</span>)</div><div class="line">  &#125; <span class="comment">// 这里没有逗号</span></div><div class="line">  helloword()&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'我是Persone的helloworld'</span>)</div><div class="line">  &#125;</div><div class="line">  <span class="comment">// 这个是申明了一个静态方法</span></div><div class="line">  <span class="comment">// 和Person.mystatic = function()&#123;&#125; 效果一样</span></div><div class="line">  <span class="keyword">static</span> mystatic()&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'我是静态方法'</span>)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 静态方法</span></div><div class="line"><span class="comment">// Person.xx = function()&#123;&#125;</span></div><div class="line">Person.mystatic002 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我是静态方法002'</span>)</div><div class="line">&#125;</div><div class="line"><span class="comment">// 在new Person()时，内部会自动调用Person中的constructor方法!</span></div><div class="line"><span class="comment">// constructor里的this是当前实例</span></div><div class="line"><span class="keyword">var</span> xmp = <span class="keyword">new</span> Person(<span class="string">'我是小红'</span>, <span class="number">16</span>)<span class="comment">// this 就是xmp</span></div><div class="line"><span class="comment">// 这就是普通属性</span></div><div class="line">Person.tmp = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我是Person的tmp方法'</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="class继承"><a href="#class继承" class="headerlink" title="class继承"></a>class继承</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</div><div class="line">    <span class="comment">// 在newPerson实例时，会被自动调用</span></div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">     <span class="keyword">this</span>.name = <span class="string">'Person'</span></div><div class="line">     <span class="keyword">this</span>.age = <span class="number">0</span></div><div class="line">    &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="comment">// 我们要让Staff继承自Person</span></div><div class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Staff</span> <span class="keyword">extends</span> <span class="title">Person</span> </span>&#123;</div><div class="line">   <span class="comment">// 如果继承了,使用了constructor,一定要在constructor中调用super()</span></div><div class="line">   <span class="comment">// 因为如果我们不写constructor,内部会自动有这样一个constructor</span></div><div class="line">   <span class="comment">// 默认就会有一个为名constructor的原型方法!</span></div><div class="line">   <span class="comment">// 如果我们手动指定，就会覆盖内部的这个方法!</span></div><div class="line">   <span class="keyword">constructor</span>()&#123;</div><div class="line">    <span class="comment">// 固定写法，这个super不能改名字</span></div><div class="line">    <span class="comment">// super()相当于有帮助我们new了Person</span></div><div class="line">     <span class="keyword">super</span>()</div><div class="line">     <span class="keyword">this</span>.sex= <span class="string">'女'</span></div><div class="line">   &#125;</div><div class="line">   sayHello()&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'1212'</span>)</div><div class="line">   &#125;</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">var</span> st = <span class="keyword">new</span> Staff()</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -225,11 +228,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/20/seajs-requirejs/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/20/node/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          seajs和requirejs
+          node初学者总结
         
       </div>
     </a>
