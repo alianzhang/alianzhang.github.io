@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/alianzhang">
-  <title>Tag: gulp | alianzhang</title>
+  <title>接触到的ES6知识点总结（未完待续） | alianzhang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="alianzhang">
-<meta property="og:url" content="https://github.com/alianzhang/tags/gulp/index.html">
+  <meta name="description" content="ng-app
+通过ng-app=“模块名”，确定了angular的作用范围，这个标签内所有涉及angular的东西都会去管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="接触到的ES6知识点总结（未完待续）">
+<meta property="og:url" content="https://github.com/alianzhang/2016/12/30/angular/index.html">
 <meta property="og:site_name" content="alianzhang">
+<meta property="og:description" content="ng-app
+通过ng-app=“模块名”，确定了angular的作用范围，这个标签内所有涉及angular的东西都会去管理">
+<meta property="og:updated_time" content="2017-01-01T15:24:03.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="alianzhang">
+<meta name="twitter:title" content="接触到的ES6知识点总结（未完待续）">
+<meta name="twitter:description" content="ng-app
+通过ng-app=“模块名”，确定了angular的作用范围，这个标签内所有涉及angular的东西都会去管理">
   
     <link rel="alternative" href="/atom.xml" title="alianzhang" type="application/atom+xml">
   
@@ -141,54 +148,126 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-angular" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/26/gulp/" class="archive-article-date">
-  	<time datetime="2016-12-26T05:39:28.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/26/gulp/">gulp基本使用</a>
+    <h1 class="article-title" itemprop="name">
+      接触到的ES6知识点总结（未完待续）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="ng-app"><a href="#ng-app" class="headerlink" title="ng-app"></a>ng-app</h2><ul>
+<li><p>通过ng-app=“模块名”，确定了angular的作用范围，这个标签内所有涉及angular的东西都会去管理</p>
+<a id="more"></a>
+<h2 id="angular-module"><a href="#angular-module" class="headerlink" title="angular.module"></a>angular.module</h2></li>
+<li><p>在angular中创建模块的方法<code>var app = angular.module(&#39;模块名&#39;,[])</code></p>
+</li>
+<li>app为变量名可以改变，我们可以把整体写在一个回调函数内，定义一个作用域，变量名就成为此作用域内的私有变量，因此不同作用域内变量名可以相同，通常习惯使用app</li>
+</ul>
+<h2 id="config"><a href="#config" class="headerlink" title="config"></a>config</h2><ul>
+<li>配置路由规则</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">  app.config([<span class="string">'$stateProvider'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">$stateProvider</span>)</span>&#123;</div><div class="line">  $stateProvider.state(&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">'模块名'</span>,</div><div class="line">    <span class="attr">url</span>:<span class="string">'/tab'</span>,</div><div class="line">    <span class="attr">abstract</span>:<span class="literal">true</span>, <span class="comment">// b.不单独显示</span></div><div class="line">    templateUrl:<span class="string">'./modules/tab/tab.html'</span>,</div><div class="line">    <span class="attr">controller</span>: 控制器名</div><div class="line">  &#125;)</div><div class="line">&#125;])</div></pre></td></tr></table></figure>
+<ul>
+<li>templateUrl：此处的URl地址是相对于入口文件（index.html）的相对地址</li>
+</ul>
+<h2 id="ui-router"><a href="#ui-router" class="headerlink" title="ui-router"></a>ui-router</h2><ul>
+<li>controller作用 范围</li>
+<li>以$开头的</li>
+</ul>
+<h3 id="1-stateProvider"><a href="#1-stateProvider" class="headerlink" title="1.$stateProvider"></a>1.$stateProvider</h3><ul>
+<li>是ui-router的一个模块</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$stateProvider.state(&#123;</div><div class="line">  <span class="attr">name</span>:<span class="string">'school'</span>,</div><div class="line">  <span class="attr">url</span>:<span class="string">'/school'</span>,</div><div class="line">  <span class="attr">template</span>:<span class="string">'&lt;div&gt;这是我们学校&#123;&#123;school_msg&#125;&#125;&lt;/div&gt;'</span>,</div><div class="line">  <span class="comment">// 这个myschoolCtrl里的$scope的作用范围只针对于当前规则template的值</span></div><div class="line">  <span class="comment">// 如果匹配到的规则(url中锚点值)不是当前规则，则myschoolCtrl不会产生作用</span></div><div class="line">  controller:<span class="string">'myschoolCtrl'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="2-urlRouterProvider"><a href="#2-urlRouterProvider" class="headerlink" title="2.$urlRouterProvider"></a>2.$urlRouterProvider</h3><ul>
+<li>用来进行路由规则的跳转<br> // 当我们以上的所有规则都不匹配时，就会将中的锚点值改变为为指定的值<br> // 不包含#!<br>  <code>$urlRouterProvider.otherwise(&#39;/tab/food&#39;)</code></li>
+</ul>
+<h2 id="angular中指定控制器的方式"><a href="#angular中指定控制器的方式" class="headerlink" title="angular中指定控制器的方式"></a>angular中指定控制器的方式</h2><ul>
+<li><ol>
+<li>通过ng-controller指定页面某块Html要使用的控制器</li>
+</ol>
+</li>
+<li><ol>
+<li>通过路由规则中的controller属性，指定对应template属性值</li>
+</ol>
+</li>
+<li><p>以上两种可以同时使用!、</p>
+</li>
+</ul>
+<h3 id="1-scope"><a href="#1-scope" class="headerlink" title="1.$scope"></a>1.$scope</h3><h3 id="2-http"><a href="#2-http" class="headerlink" title="2.$http"></a>2.$http</h3><ul>
+<li>发布异步请求</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.controller(<span class="string">''</span>)</div></pre></td></tr></table></figure>
+<h3 id="3-service"><a href="#3-service" class="headerlink" title="3.service"></a>3.service</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">// 定义模块对象</span></div><div class="line">  <span class="keyword">var</span> app = angular.module(<span class="string">'services'</span>, [])</div><div class="line">  <span class="comment">// 定义服务</span></div><div class="line">  app.service(<span class="string">'myService'</span>,[<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.myalert = <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;</div><div class="line">      alert(<span class="string">'今天的消息是:'</span>+ msg )</div><div class="line">    &#125;</div><div class="line">  &#125;])</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/30/angular/" class="archive-article-date">
+  	<time datetime="2016-12-30T08:33:25.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-30</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angular/">angular</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/26/gulp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gulp基本使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
 
 
       </div>
@@ -211,9 +290,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
