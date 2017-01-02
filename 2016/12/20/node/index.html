@@ -20,7 +20,7 @@
 官网
 
 1.1. node是什么?">
-<meta property="og:updated_time" content="2016-12-27T14:02:39.017Z">
+<meta property="og:updated_time" content="2017-01-02T13:58:22.455Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node初学者总结">
 <meta name="twitter:description" content="1.node
@@ -348,10 +348,7 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">const</span> artilce = <span class="keyword">new</span> express.Router()</div><div class="line"></div><div class="line"><span class="comment">// 获取文章内容</span></div><div class="line">artilce.get(<span class="string">'/info'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</div><div class="line">  res.send(<span class="string">'这是我们文章的信息'</span>)</div><div class="line">&#125;) </div><div class="line"><span class="comment">//暴露路由</span></div><div class="line"><span class="built_in">module</span>.exports = home</div></pre></td></tr></table></figure>
 <h4 id="express-session"><a href="#express-session" class="headerlink" title="express-session"></a>express-session</h4><ul>
-<li><ul>
 <li>安装: <code>npm install express-session --save</code></li>
-</ul>
-</li>
 <li>配合express来做登陆的第三方包</li>
 <li>用来处理用户登陆的，会自动保存用户的信息并且会吧唯一标识写入到响应头：Srt-Cookie，还会自动读取浏览器发来的消息（指的是Cookie）<ul>
 <li>1.引入</li>
@@ -366,9 +363,9 @@
 <li>引包<code>const bodyParser  = require(&#39;body-parser&#39;)</code></li>
 <li><code>app.use(bodyParser.urlencoded())</code></li>
 <li>(只能有一个监听，已经给 express 了所以将 body-parser 和 express 关联起来,当 express 接收到 post 请求后交给 body-parser ,然后把 post 请求参数转换为对象，并放在 req.body 中)</li>
-<li>express 项目中通常使用 body-parser 进行 post 参数的解析，最常用的是其中的 json 和 urlencoded 的 parser ，可分别对以 JSON 格式的 post 参数和 urlencoeded 的 post 参数进行解析，均可获得一个 JSON 化的 req.body ，如：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    &#123;</div><div class="line">    <span class="string">"username"</span>: <span class="string">"user"</span>,</div><div class="line">    <span class="string">"password"</span>: <span class="string">"pass"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
+<li>express 项目中通常使用 body-parser 进行 post 参数的解析，最常用的是其中的 json 和 urlencoded 的 parser ，可分别对以 JSON 格式的 post 参数和 urlencoeded 的 post 参数进行解析，均可获得一个 JSON 化的 req.body ，如：</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> &#123;</div><div class="line"> <span class="string">"username"</span>: <span class="string">"user"</span>,</div><div class="line"> <span class="string">"password"</span>: <span class="string">"pass"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="1-4-7-模板引擎"><a href="#1-4-7-模板引擎" class="headerlink" title="1.4.7 模板引擎"></a>1.4.7 模板引擎</h3><ul>
 <li><p>art-template</p>
 <ul>
@@ -378,17 +375,16 @@
 </li>
 <li><p>在node中使用art-template</p>
 </li>
-<li>安装包: <code>npm install art-template --save</code></li>
-<li>使用</li>
+<li>安装: <code>npm install art-template --save</code></li>
+<li>使用:</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1.引入art-template</span></div><div class="line"><span class="keyword">const</span> template = <span class="built_in">require</span>(<span class="string">'art-template'</span>)</div><div class="line">template.config(<span class="string">'cache'</span>,<span class="literal">false</span>) </div><div class="line"><span class="comment">// 默认第二个参数为true，只读一次</span></div><div class="line"><span class="comment">//改为false后，禁止缓存，每次都会读取模板</span></div><div class="line"></div><div class="line"><span class="comment">// 2.申明一个对象，用于在模板中使用</span></div><div class="line"><span class="keyword">const</span> data = &#123;<span class="attr">msg</span>:<span class="string">'我是中国人，我爱自己的祖国!'</span>&#125;</div><div class="line"></div><div class="line"><span class="comment">// 3.调用template方法，读取模板！</span></div><div class="line"><span class="comment">// 第一个参数是路径,不需要写.html后缀名</span></div><div class="line"><span class="comment">// 第二个参数是模板中要使用的数据</span></div><div class="line"><span class="comment">// 这里/mytest 对应 mytest.html</span></div><div class="line"><span class="comment">// a.先找到相应的文件，读取出来,</span></div><div class="line"><span class="comment">// b.把data中的数据替换到找到的文件中</span></div><div class="line"><span class="comment">// c.把替换后的字符串,作为结果返回</span></div><div class="line"><span class="keyword">const</span> html= template(__dirname+<span class="string">'/mytest'</span>,data)</div><div class="line"><span class="built_in">console</span>.log(html)</div></pre></td></tr></table></figure>
 <ul>
 <li>例如：如果想遍历data中的goods数组可以使用each：</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;&#123; each goods&#125;&#125;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;!-- $value相当每遍历的对象 --&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.id&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.goodsname&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.price&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.size&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/delete?id=&#123;&#123;$value.id&#125;&#125;"&gt;删除&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/edit.html?id=&#123;&#123;$value.id&#125;&#125;"&gt;修改&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">&#123;&#123;/each &#125;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;&#123; each goods&#125;&#125;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;!-- $value相当每遍历的对象 --&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.id&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.goodsname&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.price&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&#123;&#123;$value.size&#125;&#125;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/delete?id=&#123;&#123;$value.id&#125;&#125;"&gt;删除&lt;/a&gt;&lt;/td&gt;</div><div class="line">        &lt;td&gt;&lt;a href="/edit.html?id=&#123;&#123;$value.id&#125;&#125;"&gt;修改&lt;/a&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">&#123;&#123;/each &#125;&#125;</div></pre></td></tr></table></figure>
 <h3 id="1-4-8-mongodb"><a href="#1-4-8-mongodb" class="headerlink" title="1.4.8 mongodb"></a>1.4.8 mongodb</h3><ul>
-<li>1.打开mongodb软件</li>
-<li><p>安装的bin目录: 以管理员身份打开cmd</p>
+<li><p>1.打开mongodb软件，在安装包的bin目录: 以管理员身份打开cmd</p>
 <ul>
 <li>执行: <code>mongod --dbpath=../db_itcast</code><ul>
 <li>–dbpath 指定所有的数据库存储的路径! </li>
@@ -397,10 +393,9 @@
 </li>
 </ul>
 </li>
-<li><p>2.我们要往数据库存数据<br>到安装目录bin:打开cmd</p>
+<li><p>2.我们要往数据库存数据，在安装目录bin:打开cmd</p>
 <ul>
 <li>执行: <code>mongo</code></li>
-<li>存储东西!</li>
 <li>存储之前要指定我们要用的数据库(就相当于excel文件)</li>
 <li>比如我们要把数据存储到test这个数据库中!<ul>
 <li>指定要操作的数据库: <code>use test</code> (就相当于打开了一个excel文件)</li>
@@ -408,55 +403,45 @@
 </li>
 </ul>
 </li>
-<li><ol>
-<li>我们把一类数据(商品)存储到test中<ul>
+<li><p>3.我们把一类数据(商品)存储到test中</p>
+<ul>
 <li><code>db.mygoodss.insert({name:&#39;营养品&#39;,price:998})</code></li>
 <li>上面这个命令，就相当在excel中的一个sheet中添加了一行数据!</li>
 </ul>
 </li>
-</ol>
-</li>
-<li><ol>
-<li>查我们之前存的东西:<ul>
+<li><p>4.查我们之前存的东西:</p>
+<ul>
 <li><code>db.mygoodss.find({})</code></li>
 <li>find方法中的对象就是查询条件</li>
 <li>如果传入一个空对象，就查找所有数据</li>
 </ul>
 </li>
-</ol>
-</li>
-<li><ol>
-<li>删除数据<ul>
+<li><p>5.删除数据</p>
+<ul>
 <li><code>db.mygoodss.remove({})</code></li>
 <li>remove方法中的对象就是删除条件</li>
 </ul>
 </li>
-</ol>
-</li>
-<li><ol>
-<li><p>修改数据(更新,update)</p>
+<li><p>6.修改数据(更新,update)</p>
 <ul>
 <li><code>db.qiantai.update({age:12},{age:18})</code> // 这个命令操作后新数据会覆盖查找到的数据</li>
-<li>原来数据是: {name:”水骑士安全”,age:12}</li>
-<li><p>修改后的数据: {age:18}</p>
+<li>原来数据是: <code>{name:&quot;水骑士安全&quot;,age:12}</code></li>
+<li><p>修改后的数据: <code>{age:18}</code></p>
 </li>
 <li><p>如果不想覆盖原来数据，只想更改我们指定的属性</p>
 </li>
 <li>命令: <code>db.qiantai.update({age:14},{$set:{age:99}})</code></li>
-<li>原来的数据是: {name:”火骑士空空”,age:14}</li>
-<li><p>修改后的数据是: {name:”火骑士空空”,age:99}</p>
+<li>原来的数据是: <code>{name:&quot;火骑士空空&quot;,age:14}</code></li>
+<li><p>修改后的数据是: <code>{name:&quot;火骑士空空&quot;,age:99}</code></p>
 </li>
-<li><p>update还有第三，第四个参数</p>
+<li><p>update还有第三，第四个参数<br><code>db.qiantai.update({age:14},{$set:{age:99}},false,false)</code></p>
 </li>
-<li><code>db.qiantai.update({age:14},{$set:{age:99}},false,false)</code></li>
-<li>三，四个参数默认是false,分别表示:<ul>
+<li>第三，四个参数默认是false,分别表示:<ul>
 <li>三: 当为true时,如果查找不到，就把后面的数据插入进去</li>
 <li>四: 当为true时,会更新所以满足条件的数据!(默认只更新，找到的条一条数据)</li>
 </ul>
 </li>
 </ul>
-</li>
-</ol>
 </li>
 </ul>
 <h4 id="mongodb下载地址"><a href="#mongodb下载地址" class="headerlink" title="mongodb下载地址"></a>mongodb下载地址</h4><ul>
@@ -479,7 +464,13 @@
 <li>__firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</li>
 </ol>
 <h2 id="重定向-即要求浏览器跳转到另一个地址"><a href="#重定向-即要求浏览器跳转到另一个地址" class="headerlink" title="重定向!(即要求浏览器跳转到另一个地址):"></a>重定向!(即要求浏览器跳转到另一个地址):</h2><ul>
-<li>浏览器接收到数据后会重新向新地址跳转!<br>  <code>response.setHeader(&#39;Location&#39;,&lt;新地址&gt;)</code><br>  <code>response.writeHead(302)</code><br>  <code>response.end()</code></li>
+<li>浏览器接收到数据后会重新向新地址跳转!</li>
+</ul>
+<pre><code class="javascript">response.setHeader(<span class="string">'Location'</span>,&lt;新地址&gt;)
+response.writeHead(<span class="number">302</span>)
+response.end()
+</code></pre>
+<ul>
 <li>在响应头里加上 Location :’新地址’,并设置状态为302</li>
 <li><code>res.setHeader(&#39;key&#39;,&#39;value&#39;)</code>// 设置响应头</li>
 <li><code>res.writeHead(状态码)</code>// 设置状态码!</li>
