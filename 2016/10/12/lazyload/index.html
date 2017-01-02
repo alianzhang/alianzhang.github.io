@@ -6,14 +6,36 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/alianzhang">
-  <title>alianzhang</title>
+  <title>jQuery 插件 lazyload.js 常用使用方法总结 | alianzhang</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="alianzhang">
-<meta property="og:url" content="https://github.com/alianzhang/page/2/index.html">
+  <meta name="description" content="延迟加载/懒加载
+Lazy Load 这个 jQuery 插件，是用来缓冲加载图片的插件。
+这款插件在一开始不请求图片，它会检测你的滚动情况，当用户要访问时，才主动去请求要显示的图片。
+一开始不设置图片的src属性,当图片快要显示到可视区域时，再设置src属性!
+所以可以减少服务器的压力，避免不必要的资源下载。如果用户不看下面的图片，那加载全部的图片就造成了资源浪费。
+
+Lazy Load 插件原">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery 插件 lazyload.js 常用使用方法总结">
+<meta property="og:url" content="https://github.com/alianzhang/2016/10/12/lazyload/index.html">
 <meta property="og:site_name" content="alianzhang">
+<meta property="og:description" content="延迟加载/懒加载
+Lazy Load 这个 jQuery 插件，是用来缓冲加载图片的插件。
+这款插件在一开始不请求图片，它会检测你的滚动情况，当用户要访问时，才主动去请求要显示的图片。
+一开始不设置图片的src属性,当图片快要显示到可视区域时，再设置src属性!
+所以可以减少服务器的压力，避免不必要的资源下载。如果用户不看下面的图片，那加载全部的图片就造成了资源浪费。
+
+Lazy Load 插件原">
+<meta property="og:updated_time" content="2017-01-02T13:37:01.399Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="alianzhang">
+<meta name="twitter:title" content="jQuery 插件 lazyload.js 常用使用方法总结">
+<meta name="twitter:description" content="延迟加载/懒加载
+Lazy Load 这个 jQuery 插件，是用来缓冲加载图片的插件。
+这款插件在一开始不请求图片，它会检测你的滚动情况，当用户要访问时，才主动去请求要显示的图片。
+一开始不设置图片的src属性,当图片快要显示到可视区域时，再设置src属性!
+所以可以减少服务器的压力，避免不必要的资源下载。如果用户不看下面的图片，那加载全部的图片就造成了资源浪费。
+
+Lazy Load 插件原">
   
     <link rel="alternative" href="/atom.xml" title="alianzhang" type="application/atom+xml">
   
@@ -141,9 +163,7 @@
 </nav>
 
       <div class="body-wrap">
-        
-  
-    <article id="post-兼容性问题" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-lazyload" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -152,115 +172,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/25/兼容性问题/">自己遇到的一些兼容性问题总结（未完待续）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h1><h2 id="CSS3和HTML5的兼容"><a href="#CSS3和HTML5的兼容" class="headerlink" title="CSS3和HTML5的兼容"></a>CSS3和HTML5的兼容</h2>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/11/25/兼容性问题/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/25/兼容性问题/" class="archive-article-date">
-  	<time datetime="2016-11-25T03:06:25.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-25</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容性问题/">兼容性问题</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-JS高级知识概述" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/24/JS高级知识概述/">JS高级知识概述</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JavaScript高级知识总结"><a href="#JavaScript高级知识总结" class="headerlink" title="JavaScript高级知识总结"></a>JavaScript高级知识总结</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>递归就是函数自己直接或者间接的调用自己</p>
-<h3 id="递归的两个要素"><a href="#递归的两个要素" class="headerlink" title="递归的两个要素"></a>递归的两个要素</h3><ul>
-<li>自己调用自己</li>
-<li>递归结束条件
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/11/24/JS高级知识概述/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/11/24/JS高级知识概述/" class="archive-article-date">
-  	<time datetime="2016-11-23T17:06:25.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-24</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-lazyload" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/12/lazyload/">jQuery 插件 lazyload.js 常用使用方法总结</a>
+    <h1 class="article-title" itemprop="name">
+      jQuery 插件 lazyload.js 常用使用方法总结
     </h1>
   
 
@@ -313,59 +226,46 @@
   </div>
 </article>
 
-
-
-
-
-
-
-
-
-
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2016/11/24/JS高级知识概述/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
+          JS高级知识概述
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/22/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2016/07/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/07/22/hello-world/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/07/22/hello-world/" class="archive-article-date">
-  	<time datetime="2016-07-22T07:08:32.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-07-22</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
 	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
 
 
 
@@ -373,15 +273,6 @@
 
 
 
-
-
-
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
       </div>
@@ -403,8 +294,8 @@
 		fancybox: true,
 		mathjax: false,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
